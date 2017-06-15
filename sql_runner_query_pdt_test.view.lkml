@@ -51,3 +51,10 @@ view: sql_runner_query_pdt_test {
     fields: [user_id, order_count, latest_order_time, first_order_time, days_since]
   }
 }
+
+
+view: test_ref_pdt{
+  derived_table: {
+    sql: select * from ${sql_runner_query_pdt_test.SQL_TABLE_NAME} ;;
+  }
+}
