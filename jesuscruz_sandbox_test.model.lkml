@@ -71,3 +71,12 @@ explore: user_data {
 explore: users {}
 
 explore: users_nn {}
+
+explore: sql_runner_query_pdt_test {
+  join: users {
+    type:  left_outer
+    sql_on:  ${users.id} = ${sql_runner_query_pdt_test.user_id} ;;
+    relationship: one_to_one
+
+  }
+}
